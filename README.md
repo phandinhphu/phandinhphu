@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://avatars.githubusercontent.com/u/your-user-id?v=4" width="150" style="border-radius: 50%" alt="avatar" />
+  <img src="https://avatars.githubusercontent.com/u/127222540?v=4" width="150" style="border-radius: 50%" alt="avatar" />
 </p>
 
 <h2 align="center">👋 Xin chào, mình là Phú!</h2>
