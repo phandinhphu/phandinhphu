@@ -1,0 +1,156 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" width="1200" height="420" role="img" aria-label="Quy Nhon coastal hero">
+  <defs>
+    <!-- Coastal sky inspired by Quy Nhon -->
+    <radialGradient id="av-sky" cx="0.5" cy="1" r="1.1">
+      <stop offset="0" stop-color="#f5d6a2"/>
+      <stop offset="0.55" stop-color="#8dcbd4"/>
+      <stop offset="1" stop-color="#1b607b"/>
+    </radialGradient>
+
+    <!-- Aurora ribbon palettes -->
+    <linearGradient id="av-teal" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d9c2b4" stop-opacity="0"/>
+      <stop offset="0.2" stop-color="#d9c2b4" stop-opacity="0.28"/>
+      <stop offset="0.52" stop-color="#f0d9c8" stop-opacity="0.6"/>
+      <stop offset="0.8" stop-color="#d9c2b4" stop-opacity="0.24"/>
+      <stop offset="1" stop-color="#d9c2b4" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="av-magenta" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4b7a8" stop-opacity="0"/>
+      <stop offset="0.3" stop-color="#d4b7a8" stop-opacity="0.24"/>
+      <stop offset="0.58" stop-color="#f1d5c7" stop-opacity="0.5"/>
+      <stop offset="0.85" stop-color="#d4b7a8" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#d4b7a8" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="av-amber" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#e7c9a4" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#e7c9a4" stop-opacity="0.2"/>
+      <stop offset="1" stop-color="#e7c9a4" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Living turbulence: animated baseFrequency + seed -->
+    <filter id="av-flow1" x="-30%" y="-50%" width="160%" height="200%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.006 0.022" numOctaves="3" seed="2" result="t1">
+        <animate attributeName="baseFrequency" values="0.006 0.022;0.011 0.028;0.006 0.022" dur="24s" repeatCount="indefinite"/>
+        <animate attributeName="seed" from="0" to="40" dur="40s" repeatCount="indefinite"/>
+      </feTurbulence>
+      <feDisplacementMap in="SourceGraphic" in2="t1" scale="90" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="av-flow2" x="-30%" y="-50%" width="160%" height="200%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.009 0.026" numOctaves="2" seed="9" result="t2">
+        <animate attributeName="baseFrequency" values="0.009 0.026;0.014 0.034;0.009 0.026" dur="18s" repeatCount="indefinite"/>
+        <animate attributeName="seed" from="0" to="30" dur="32s" repeatCount="indefinite"/>
+      </feTurbulence>
+      <feDisplacementMap in="SourceGraphic" in2="t2" scale="70"/>
+    </filter>
+    <filter id="av-flow3" x="-30%" y="-50%" width="160%" height="200%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.013 0.04" numOctaves="2" seed="17" result="t3">
+        <animate attributeName="seed" from="0" to="50" dur="22s" repeatCount="indefinite"/>
+      </feTurbulence>
+      <feDisplacementMap in="SourceGraphic" in2="t3" scale="48"/>
+    </filter>
+
+    <!-- Gentle haze softens the headline without losing readability. -->
+    <filter id="av-glow" x="-25%" y="-60%" width="150%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="5" result="ambient-blur"/>
+      <feFlood flood-color="#dfe5e8" flood-opacity="0.08" result="ambient-color"/>
+      <feComposite in="ambient-color" in2="ambient-blur" operator="in" result="ambient"/>
+      <feGaussianBlur in="SourceGraphic" stdDeviation="0.28" result="soft-source"/>
+      <feMerge>
+        <feMergeNode in="ambient"/>
+        <feMergeNode in="soft-source"/>
+      </feMerge>
+    </filter>
+
+    <!-- Grain overlay -->
+    <filter id="av-grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix values="0 0 0 0 0.72
+        0 0 0 0 0.78
+        0 0 0 0 0.8
+        0 0 0 0 0.74
+                0 0 0 0.05 0"/>
+    </filter>
+
+    <linearGradient id="av-sea" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#257f96"/>
+      <stop offset="0.58" stop-color="#12647d"/>
+      <stop offset="1" stop-color="#063b59"/>
+    </linearGradient>
+    <linearGradient id="av-cliff" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4c8277"/>
+      <stop offset="0.45" stop-color="#275c5a"/>
+      <stop offset="1" stop-color="#123746"/>
+    </linearGradient>
+    <linearGradient id="av-sand" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e9c58d"/>
+      <stop offset="1" stop-color="#b57958"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Quy Nhon coastal sky -->
+  <rect width="1200" height="245" fill="url(#av-sky)"/>
+  <circle cx="885" cy="126" r="42" fill="#ffe2a7" opacity="0.8"/>
+  <circle cx="885" cy="126" r="62" fill="#ffe2a7" opacity="0.12"/>
+  <path d="M70,128 C150,104 205,119 255,108 C302,98 350,108 389,128 C316,132 194,139 70,128 Z" fill="#e9f3e9" opacity="0.32"/>
+  <path d="M940,84 C1006,65 1056,79 1100,72 C1142,66 1170,75 1200,91 L1200,108 C1125,96 1040,103 940,84 Z" fill="#e9f3e9" opacity="0.25"/>
+
+  <!-- Open sea -->
+  <rect y="220" width="1200" height="200" fill="url(#av-sea)"/>
+  <path d="M0,222 C170,218 290,226 430,221 C590,216 745,225 880,220 C1010,216 1100,224 1200,219 L1200,238 C1030,232 890,239 730,233 C550,228 380,237 210,232 C130,230 60,234 0,232 Z" fill="#9ad2cf" opacity="0.32"/>
+
+  <!-- Distant islands and rocky headland -->
+  <path d="M0,225 L92,215 L145,218 L190,207 L243,216 L293,211 L350,225 Z" fill="#356f70" opacity="0.68"/>
+  <path d="M620,226 L675,199 L716,205 L751,182 L800,204 L840,194 L895,225 Z" fill="#2d6669" opacity="0.88"/>
+  <path d="M910,420 L910,303 L948,286 L975,247 L1000,270 L1028,239 L1055,274 L1100,257 L1148,284 L1200,268 L1200,420 Z" fill="url(#av-cliff)"/>
+  <path d="M949,286 L975,247 L1000,270 L1028,239 L1055,274" fill="none" stroke="#86b3a0" stroke-width="2" opacity="0.6"/>
+  <path d="M0,420 L0,354 L50,334 L95,347 L141,319 L190,335 L237,312 L292,338 L350,321 L406,350 L468,335 L525,356 L590,339 L650,360 L720,346 L784,368 L848,348 L910,377 L910,420 Z" fill="#174557"/>
+
+  <!-- Sunlit surf and shore -->
+  <g fill="none" stroke="#d5f5e8" stroke-width="3.5" opacity="0.88">
+    <path d="M0,286 C150,274 248,294 370,282 C505,268 614,292 750,280 C850,270 930,283 1030,273 C1100,267 1150,278 1200,272">
+      <animateTransform attributeName="transform" type="translate" values="-90 4;65 -5;-90 4" dur="7s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.45;1;0.45" dur="3.2s" repeatCount="indefinite"/>
+      <animate attributeName="stroke-width" values="2.5;5;2.5" dur="3.2s" repeatCount="indefinite"/>
+    </path>
+  </g>
+  <g fill="none" stroke="#8de0d5" stroke-width="2.5" opacity="0.72">
+    <path d="M0,327 C155,315 275,338 405,323 C560,305 690,342 820,322 C900,310 1010,326 1110,312 C1150,307 1180,310 1200,313">
+      <animateTransform attributeName="transform" type="translate" values="85 -3;-70 6;85 -3" dur="5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.3;0.95;0.3" dur="2.6s" repeatCount="indefinite"/>
+      <animate attributeName="stroke-width" values="1.5;4;1.5" dur="2.6s" repeatCount="indefinite"/>
+    </path>
+  </g>
+  <path d="M0,349 C120,340 215,354 330,344 C470,332 590,355 710,345 C850,333 970,351 1200,337" fill="none" stroke="#e4fff1" stroke-width="2" opacity="0.64">
+    <animateTransform attributeName="transform" type="translate" values="-120 5;105 -4;-120 5" dur="9s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.2;0.82;0.2" dur="4.5s" repeatCount="indefinite"/>
+  </path>
+  <path d="M0,301 C110,289 220,309 345,298 C480,286 610,309 735,296 C850,284 960,304 1200,291" fill="none" stroke="#f2fff5" stroke-width="1.5" opacity="0.55">
+    <animateTransform attributeName="transform" type="translate" values="110 -3;-95 5;110 -3" dur="6s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.15;0.7;0.15" dur="3.8s" repeatCount="indefinite"/>
+  </path>
+  <path d="M0,420 L0,405 C160,385 280,407 430,393 C600,378 752,410 900,390 L930,420 Z" fill="url(#av-sand)" opacity="0.92"/>
+  <path d="M0,399 C128,382 260,405 405,389 C560,373 730,406 900,385" fill="none" stroke="#f5dfad" stroke-width="3" opacity="0.72"/>
+  <rect width="1200" height="420" filter="url(#av-grain)" opacity="0.14"/>
+
+  <!-- Type — sits on top of horizon -->
+  <g font-family="'JetBrains Mono', monospace">
+    <text x="80" y="368" font-size="74" font-weight="500" font-style="italic" fill="#f5f5f5" opacity="0.96" filter="url(#av-glow)" letter-spacing="-1.5">_Phan Đình Phú</text>
+  </g>
+  <g font-family="'JetBrains Mono', monospace">
+    <text x="82" y="410" font-size="12" fill="#ebebeb" letter-spacing="3" opacity="0.9">SOFTWARE ENGINEER</text>
+  </g>
+  <g font-family="'JetBrains Mono', monospace">
+    <text x="1120" y="396" text-anchor="end" font-size="12" fill="#e5e5e5" letter-spacing="3" opacity="0.9">QUY NHON, VIETNAM</text>
+  </g>
+
+  <!-- Editorial corner mark -->
+  <g transform="translate(80,40)" font-family="'JetBrains Mono', monospace" font-size="9" fill="#d7d7d7" letter-spacing="3">
+    <line x1="0" y1="0" x2="14" y2="0" stroke="#d7d7d7" stroke-width="0.6"/>
+    <text x="20" y="3">VOL.MMXXVI · ISSUE 01</text>
+  </g>
+  <g transform="translate(1120,40)" font-family="'JetBrains Mono', monospace" font-size="9" fill="#d7d7d7" letter-spacing="3" text-anchor="end">
+    <text x="-20" y="3">COASTAL  ·  SKY CLEAR</text>
+    <line x1="-14" y1="0" x2="0" y2="0" stroke="#d7d7d7" stroke-width="0.6"/>
+  </g>
+</svg>
