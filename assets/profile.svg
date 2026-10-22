@@ -92,8 +92,39 @@
   <rect width="1200" height="245" fill="url(#av-sky)"/>
   <circle cx="885" cy="126" r="42" fill="#ffe2a7" opacity="0.8"/>
   <circle cx="885" cy="126" r="62" fill="#ffe2a7" opacity="0.12"/>
-  <path d="M70,128 C150,104 205,119 255,108 C302,98 350,108 389,128 C316,132 194,139 70,128 Z" fill="#e9f3e9" opacity="0.32"/>
-  <path d="M940,84 C1006,65 1056,79 1100,72 C1142,66 1170,75 1200,91 L1200,108 C1125,96 1040,103 940,84 Z" fill="#e9f3e9" opacity="0.25"/>
+  <!-- Moving sea clouds -->
+  <g fill="#f2f8ed">
+    <path d="M70,128 C112,111 139,113 165,119 C180,99 214,96 237,115 C267,101 303,108 314,127 C345,119 374,123 389,128 C310,143 160,143 70,128 Z" opacity="0.42">
+      <animateTransform attributeName="transform" type="translate" values="-45 3;65 -2;-45 3" dur="9s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.22;0.55;0.22" dur="4.5s" repeatCount="indefinite"/>
+    </path>
+    <path d="M940,84 C970,71 1000,72 1021,82 C1032,60 1070,57 1090,78 C1113,67 1145,70 1156,87 C1178,82 1192,86 1200,91 L1200,108 C1118,101 1028,105 940,84 Z" opacity="0.34">
+      <animateTransform attributeName="transform" type="translate" values="55 -2;-75 4;55 -2" dur="12s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.18;0.48;0.18" dur="6s" repeatCount="indefinite"/>
+    </path>
+    <path d="M430,72 C460,61 486,65 502,75 C518,52 553,53 569,76 C594,66 622,72 632,88 C574,91 502,91 430,72 Z" opacity="0.2">
+      <animateTransform attributeName="transform" type="translate" values="80 0;-90 3;80 0" dur="15s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.1;0.34;0.1" dur="7.5s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <!-- Passing seabirds -->
+  <g fill="none" stroke="#214b5a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+    <g opacity="0.72">
+      <path d="M0,0 C10,-8 18,-8 27,0 C36,-8 44,-8 54,0">
+        <animateTransform attributeName="transform" type="translate" values="-90 155;1290 116" dur="21s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;0.9;0.9;0" keyTimes="0;0.08;0.9;1" dur="21s" repeatCount="indefinite"/>
+      </path>
+      <path d="M0,0 C7,-6 13,-6 20,0 C27,-6 33,-6 40,0" transform="translate(62,22)">
+        <animateTransform attributeName="transform" type="translate" values="62 174;1240 143" dur="17s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;0.75;0.75;0" keyTimes="0;0.1;0.88;1" dur="17s" repeatCount="indefinite"/>
+      </path>
+    </g>
+    <path d="M0,0 C8,-7 15,-7 22,0 C29,-7 36,-7 44,0" stroke-width="1.6" opacity="0.52">
+      <animateTransform attributeName="transform" type="translate" values="1240 52;-70 76" dur="25s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.7;0.7;0" keyTimes="0;0.08;0.9;1" dur="25s" repeatCount="indefinite"/>
+    </path>
+  </g>
 
   <!-- Open sea -->
   <rect y="220" width="1200" height="200" fill="url(#av-sea)"/>
@@ -105,6 +136,29 @@
   <path d="M910,420 L910,303 L948,286 L975,247 L1000,270 L1028,239 L1055,274 L1100,257 L1148,284 L1200,268 L1200,420 Z" fill="url(#av-cliff)"/>
   <path d="M949,286 L975,247 L1000,270 L1028,239 L1055,274" fill="none" stroke="#86b3a0" stroke-width="2" opacity="0.6"/>
   <path d="M0,420 L0,354 L50,334 L95,347 L141,319 L190,335 L237,312 L292,338 L350,321 L406,350 L468,335 L525,356 L590,339 L650,360 L720,346 L784,368 L848,348 L910,377 L910,420 Z" fill="#174557"/>
+
+  <!-- Occasional larger swells -->
+  <g fill="none" stroke="#c9f1e3" stroke-linecap="round">
+    <path d="M80,365 C150,336 218,337 286,363 C330,380 364,379 404,362" stroke-width="4" opacity="0">
+      <animateTransform attributeName="transform" type="translate" values="-180 7;155 -4;-180 7" dur="12s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0;0.9;0.9;0" keyTimes="0;0.38;0.46;0.62;1" dur="12s" repeatCount="indefinite"/>
+      <animate attributeName="stroke-width" values="2;2;6;3;2" dur="12s" repeatCount="indefinite"/>
+    </path>
+    <path d="M690,373 C750,348 816,348 872,370 C910,385 942,385 982,369" stroke-width="3.5" opacity="0">
+      <animateTransform attributeName="transform" type="translate" values="140 -3;-130 5;140 -3" dur="15s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0;0.8;0.8;0" keyTimes="0;0.42;0.5;0.66;1" dur="15s" repeatCount="indefinite"/>
+      <animate attributeName="stroke-width" values="2;2;5;3;2" dur="15s" repeatCount="indefinite"/>
+    </path>
+    <path d="M390,255 C442,237 494,238 544,257 C576,269 603,269 636,257" stroke-width="2.5" opacity="0">
+      <animateTransform attributeName="transform" type="translate" values="110 0;-90 3;110 0" dur="10s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0;0.7;0.7;0" keyTimes="0;0.46;0.54;0.7;1" dur="10s" repeatCount="indefinite"/>
+    </path>
+  </g>
+  <g fill="none" stroke="#f2fff4" stroke-linecap="round" opacity="0">
+    <path d="M112,357 C166,340 220,343 274,361" stroke-width="2"/>
+    <path d="M722,365 C775,350 824,352 875,368" stroke-width="1.8"/>
+    <animate attributeName="opacity" values="0;0;0.9;0.9;0" keyTimes="0;0.4;0.48;0.64;1" dur="12s" repeatCount="indefinite"/>
+  </g>
 
   <!-- Sunlit surf and shore -->
   <g fill="none" stroke="#d5f5e8" stroke-width="3.5" opacity="0.88">
